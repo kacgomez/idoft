@@ -19,4 +19,8 @@ jobs:
         with:
           java-version: 1.8
           
+      - name: Get 10 random tests
+      - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
+      
+          
       - run: ls
