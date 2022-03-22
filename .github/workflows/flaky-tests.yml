@@ -25,5 +25,9 @@ jobs:
       - name: Flaky Test 1
         run: git clone https://github.com/vojtechhabarta/typescript-generator
       - run: cd typescript-generator
+      
+      - name: Checkout latest commit
+        with: 
+          ref: actions/checkout@c19d407fea52612e7b7cd20620059736aec9a6a9
         
       - run: ls
