@@ -1,7 +1,12 @@
 name: Flaky Tests
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+  build:
+  
+    runs-on: ubuntu-latest\
+    
     steps:
+      - run: cd
+      - run: cd idoft
+      - run: git checkout b31c29526ac35b32b03d8cf9017e79a51fbe43e8
       - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
