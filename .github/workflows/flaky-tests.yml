@@ -7,4 +7,4 @@ jobs:
     
     steps:
       - run: ls
-      - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo winglam2@illinois.edu; done) | head
+      - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
