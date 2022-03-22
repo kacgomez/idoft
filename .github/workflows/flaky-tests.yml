@@ -6,6 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - run: cd
       - run: ls
       - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo winglam2@illinois.edu; done) | head
