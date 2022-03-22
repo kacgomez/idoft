@@ -1,11 +1,18 @@
 name: Flaky Tests
 on: [push]
+
 jobs:
   build:
-  
+    name: Running Flaky Tests
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkoput main branch
+        uses: actions/checkout@v2
+        
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          
       - run: ls
-      - run: cd idoft
-      - run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
