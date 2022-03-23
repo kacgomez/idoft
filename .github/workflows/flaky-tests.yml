@@ -25,9 +25,14 @@ jobs:
         run: | 
              git clone https://github.com/vojtechhabarta/typescript-generator
              cd typescript-generator
-      - uses: actions/checkout@v2
+     
+      - name: Checkout the latest commit
+        uses: actions/checkout@v2
         with:
           repository: vojtechhabarta/typescript-generator
-          ref: ${{ git rev-parse HEAD }}
+          ref: c19d407fea52612e7b7cd20620059736aec9a6a9
+          
+      - name: Compile the module
+        run: mvn test-compile -pl typescript-generator-core -am
         
       - run: ls
