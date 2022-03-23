@@ -21,10 +21,10 @@ jobs:
       - name: Get 10 random tests
         run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
       
-      - name: Clone test's repo
-        run: | 
-             git clone https://github.com/vojtechhabarta/typescript-generator
-             cd typescript-generator
+      - name: Clone first test's repo
+        run: git clone https://github.com/vojtechhabarta/typescript-generator
+             
+      - run: cd typescript-generator
      
       - name: Checkout the latest commit
         uses: actions/checkout@v2
@@ -40,4 +40,26 @@ jobs:
         
       - name: A failing test with NonDex tool
         run: mvn -pl typescript-generator-core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=cz.habarta.typescript.generator.TaggedUnionsTest#testTaggedUnionsWithInterfaces -DnondexRuns=10
+        
+        
+        
+      - name: Clone second test's repo
+        run: git clone https://github.com/alibaba/fastjson
+             
+      - run: cd fastjson
+     
+      - name: Checkout the latest commit
+        uses: actions/checkout@v2
+        with:
+          repository: alibaba/fastjson
+          ref: a7f1f5c4ac52503cc95bf1d27498098b3093a0df
+          
+      - name: Compile the module
+        run: mvn . -am
+        
+      - name: A Passing Test
+        run: mvn -pl . test -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue
+        
+      - name: A failing test with NonDex tool
+        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue -DnondexRuns=10  
 
