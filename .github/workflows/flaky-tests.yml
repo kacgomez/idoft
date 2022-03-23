@@ -21,6 +21,7 @@ jobs:
           
       - name: Get 10 random tests
         run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
+      - run: cd
       
       - name: Cloning for Flaky Test 1
         uses: actions/checkout@https://github.com/vojtechhabarta/typescript-generator
