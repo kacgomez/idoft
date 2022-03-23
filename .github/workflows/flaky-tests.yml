@@ -20,8 +20,5 @@ jobs:
           
       - name: Get 10 random tests
         run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head
-      
-      - name: Cloning for Flaky Test 1
-        run: git checkout c19d407fea52612e7b7cd20620059736aec9a6a9
         
       - run: ls
