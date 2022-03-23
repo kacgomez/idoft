@@ -57,7 +57,7 @@ jobs:
           ref: e35ce8c013327b91d034b62d53eece055fa64970
           
       - name: Compile the module
-        run: mvn apollo-client -am
+        run: mvn test-compile -pl apollo-client -am
         
       - name: A Passing Test
         run: mvn -pl apollo-client test -Dtest=com.ctrip.framework.apollo.internals.RemoteConfigLongPollServiceTest#testAssembleLongPollRefreshUrl
