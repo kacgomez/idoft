@@ -11,8 +11,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: kacgomez/idoft
-          ref: b31c29526ac35b32b03d8cf9017e79a51fbe43e8
-          
+          ref: b31c29526ac35b32b03d8cf9017e79a51fbe43e8      
         
       - name: Set up JDK
         uses: actions/setup-java@v1
@@ -24,9 +23,8 @@ jobs:
       - run: cd
       
       - name: Cloning for Flaky Test 1
-        uses: actions/checkout@https://github.com/vojtechhabarta/typescript-generator
-        with: 
-          repository: kacgomez/typescript-generator
-          ref: c19d407fea52612e7b7cd20620059736aec9a6a9
+        run: |
+             git checkout c19d407fea52612e7b7cd20620059736aec9a6a9
+             cd typescript-generator
         
       - run: ls
