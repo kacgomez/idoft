@@ -46,7 +46,7 @@ jobs:
         
         
       - name: Clone second test's repo
-        run: git clone https://github.com/ctripcorp/apollo,e35ce8c013327b91d034b62d53eece055fa64970,apollo-client,com.ctrip.framework.apollo.internals.RemoteConfigLongPollServiceTest.testAssembleLongPollRefreshUrl,ID,,,
+        run: git clone https://github.com/ctripcorp/apollo
              
       - run: cd apollo
      
