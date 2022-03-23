@@ -46,22 +46,22 @@ jobs:
         
         
       - name: Clone second test's repo
-        run: git clone https://github.com/alibaba/fastjson
+        run: git clone https://github.com/OpenHFT/Chronicle-Wire
              
-      - run: cd fastjson
+      - run: cd Chronicle-Wire
      
       - name: Checkout the latest commit
         uses: actions/checkout@v2
         with:
-          repository: alibaba/fastjson
-          ref: 7bd661dc4c9d4b1ecf4c9caf85386829bcd5e147
+          repository: OpenHFT/Chronicle-Wire
+          ref: a0aa1a2cb628b7b8dbb541c149442776026012ef
           
       - name: Compile the module
         run: mvn test-compile -pl . -am
         
       - name: A Passing Test
-        run: mvn -pl . test -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue
+        run: mvn -pl . test -Dtest=net.openhft.chronicle.wire.MicroLongConverterTest#testMicro
         
       - name: A failing test with NonDex tool
-        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue -DnondexRuns=100  
+        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=net.openhft.chronicle.wire.MicroLongConverterTest#testMicro -DnondexRuns=10  
 
