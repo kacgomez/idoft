@@ -24,9 +24,9 @@ jobs:
       - run: cd
       
       - name: Clone test's repo
-        run: git clone https://github.com/vojtechhabarta/typescript-generator
-        
-      - run: cd typescript-generator
+        run: | 
+             git clone https://github.com/vojtechhabarta/typescript-generator
+             cd typescript-generator
       - uses: actions/checkout@v2
         with:
           repository: vojtechhabarta/typescript-generator
