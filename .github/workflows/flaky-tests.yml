@@ -63,5 +63,5 @@ jobs:
         run: mvn -pl . test -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue
         
       - name: A failing test with NonDex tool
-        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue -DnondexRuns=10  
+        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue -DnondexRuns=100  
 
