@@ -35,4 +35,9 @@ jobs:
       - name: Compile the module
         run: mvn test-compile -pl typescript-generator-core -am
         
-      - run: ls
+      - name: A Passing Test
+        run: mvn -pl typescript-generator-core test -Dtest=cz.habarta.typescript.generator.TaggedUnionsTest#testTaggedUnionsWithInterfaces
+        
+      - name: A failing test with NonDex tool
+        run: mvn -pl typescript-generator-core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=cz.habarta.typescript.generator.TaggedUnionsTest#testTaggedUnionsWithInterfaces
+
