@@ -10,7 +10,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v2
         with:
-          repository: kacgomez/idoft
+          repository: TestingResearchIllinois/idoft
           ref: b31c29526ac35b32b03d8cf9017e79a51fbe43e8      
         
       - name: Set up JDK
