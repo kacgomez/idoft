@@ -28,6 +28,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: vojtechhabarta/typescript-generator
-          ref: git rev-parse HEAD
+          ref: ${{ git rev-parse HEAD }}
         
       - run: ls
