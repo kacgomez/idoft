@@ -46,22 +46,22 @@ jobs:
         
         
       - name: Clone second test's repo
-        run: git clone https://github.com/ctripcorp/apollo
+        run: git clone https://github.com/alibaba/fastjson
              
-      - run: cd apollo
+      - run: cd fastjson
      
       - name: Checkout the latest commit
         uses: actions/checkout@v2
         with:
-          repository: ctripcorp/apollo
-          ref: e35ce8c013327b91d034b62d53eece055fa64970
+          repository: alibaba/fastjson
+          ref: a7f1f5c4ac52503cc95bf1d27498098b3093a0df
           
       - name: Compile the module
-        run: mvn test-compile -pl apollo-client -am
+        run: mvn test-compile -pl . -am
         
       - name: A Passing Test
-        run: mvn -pl apollo-client test -Dtest=com.ctrip.framework.apollo.internals.RemoteConfigLongPollServiceTest#testAssembleLongPollRefreshUrl
+        run: mvn -pl . test -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue
         
       - name: A failing test with NonDex tool
-        run: mvn -pl apollo-client edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.ctrip.framework.apollo.internals.RemoteConfigLongPollServiceTest#testAssembleLongPollRefreshUrl -DnondexRuns=10  
+        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.alibaba.json.bvt.issue_1400.Issue1493#test_for_issue -DnondexRuns=10  
 
