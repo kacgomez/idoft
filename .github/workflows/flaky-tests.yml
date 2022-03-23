@@ -54,7 +54,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: alibaba/fastjson
-          ref: a7f1f5c4ac52503cc95bf1d27498098b3093a0df
+          ref: 7bd661dc4c9d4b1ecf4c9caf85386829bcd5e147
           
       - name: Compile the module
         run: mvn test-compile -pl . -am
