@@ -29,7 +29,7 @@ jobs:
       - run: cd typescript-generator
       - uses: actions/checkout@v2
         with:
-          repository: kacgomez/typescript-generator
+          repository: vojtechhabarta/typescript-generator
           ref: c19d407fea52612e7b7cd20620059736aec9a6a9
         
       - run: ls
