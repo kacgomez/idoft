@@ -44,7 +44,10 @@ jobs:
  #       run: mvn -pl typescript-generator-core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=cz.habarta.typescript.generator.TaggedUnionsTest#testTaggedUnionsWithInterfaces -DnondexRuns=10
         
         
-        
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
       - name: Clone second test's repo
         run: git clone https://github.com/OpenHFT/Chronicle-Wire
              
