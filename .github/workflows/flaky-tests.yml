@@ -24,7 +24,6 @@ jobs:
       
       - name: Cloning for Flaky Test 1
         run: actions/checkout@https://github.com/vojtechhabarta/typescript-generator
-      - run: cd typescript-generator
       
           
       
