@@ -23,8 +23,6 @@ jobs:
       - run: cd
       
       - name: Cloning for Flaky Test 1
-        run: |
-             git checkout c19d407fea52612e7b7cd20620059736aec9a6a9
-             cd typescript-generator
+        run: git checkout c19d407fea52612e7b7cd20620059736aec9a6a9
         
       - run: ls
