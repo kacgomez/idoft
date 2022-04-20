@@ -12,11 +12,6 @@ jobs:
         with:
           repository: TestingResearchIllinois/idoft
           ref: b31c29526ac35b32b03d8cf9017e79a51fbe43e8      
-        
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
           
       - name: Get 10 random tests
         run: grep ,ID,, pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo kgomez22@gmu.edu; done) | head    
@@ -24,6 +19,11 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          
       - name: Clone first test's repo
         run: git clone https://github.com/vojtechhabarta/typescript-generator
              
